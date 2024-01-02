@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Main
  * 1 Написать метод, возвращающий количество чётных элементов массива.
@@ -20,6 +22,12 @@ public class Main {
         return count;
     }
 
+    public static int var(int[] array) {
+        int min = Arrays.stream(array).min().getAsInt();
+        int max = Arrays.stream(array).max().getAsInt();
+        return max - min;
+    }
+
     public static void main(String[] args) {
         int[] arr1 = { 2, 1, 2, 3, 4 };
         int[] arr2 = { 2, 2, 0 };
@@ -27,5 +35,9 @@ public class Main {
         System.out.printf("%d\n", countEvens(arr1));
         System.out.printf("%d\n", countEvens(arr2));
         System.out.printf("%d\n", countEvens(arr3));
+
+        System.out.printf("%d\n", var(arr1));
+        System.out.printf("%d\n", var(arr2));
+        System.out.printf("%d\n", var(arr3));
     }
 }
