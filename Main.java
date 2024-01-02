@@ -28,6 +28,16 @@ public class Main {
         return max - min;
     }
 
+    public static boolean isZero(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] == 0 && array[i + 1] == 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static void main(String[] args) {
         int[] arr1 = { 2, 1, 2, 3, 4 };
         int[] arr2 = { 2, 2, 0 };
@@ -39,5 +49,14 @@ public class Main {
         System.out.printf("%d\n", var(arr1));
         System.out.printf("%d\n", var(arr2));
         System.out.printf("%d\n", var(arr3));
+
+        int[] arr4 = { 2, 1, 2, 0, 0, 9, -6 };
+        int[] arr5 = { 2, 0, 0 };
+        System.out.printf("%b\n", isZero(arr1));
+        System.out.printf("%b\n", isZero(arr2));
+        System.out.printf("%b\n", isZero(arr3));
+        System.out.printf("%b\n", isZero(arr4));
+        System.out.printf("%b\n", isZero(arr5));
+
     }
 }
